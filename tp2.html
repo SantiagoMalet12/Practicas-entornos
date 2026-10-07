@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercitación HTML5</title>
+</head>
+<body>
+
+    <!-- ejecitacion 2 -->
+    <h2>Ejercitación 2: Audio</h2>
+    <audio controls>
+        <source src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <hr>
+
+    <!-- ejecitacion 3 -->
+    <h2>Ejercitación 3: Video</h2>
+    <video width="320" height="240" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <hr>
+
+    <!-- ejecitacion 4 -->
+    <h2>Ejercitación 4: Formularios</h2>
+
+    <h3>4.A) Campo requerido</h3>
+    <form action="#">
+        <input type="text" name="requerido" required>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h3>4.B) Campo email</h3>
+    <form action="#">
+        <input type="email" name="correo" required>
+        <input type="submit" value="Validar email">
+    </form>
+
+    <h3>4.C) Campo fecha</h3>
+    <form action="#">
+        <input type="date" name="fecha" required>
+        <input type="submit" value="Validar fecha">
+    </form>
+
+    <h3>4.D) Campo color</h3>
+    <form action="#">
+        <input type="color" name="color">
+        <input type="submit" value="Enviar color">
+    </form>
+
+    <h3>4.E) Campo number con mínimo y máximo</h3>
+    <form action="#">
+        <input type="number" name="numero" min="1" max="100" required>
+        <input type="submit" value="Validar número">
+    </form>
+
+</body>
+</html>
