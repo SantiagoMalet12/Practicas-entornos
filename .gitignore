@@ -1,0 +1,3 @@
+# Ignorar carpetas docs
+docs/
+**/docs/
