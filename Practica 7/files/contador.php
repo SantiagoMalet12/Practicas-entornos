@@ -3,7 +3,7 @@ if (!isset($_COOKIE['contador'])) {
     setcookie("contador", 1, time() + (3600 * 24 * 365));
     $mensaje = "¡Bienvenido a la página por primera vez!";
 } else {
-    $visitas = (int)$_COOKIE['contador'] + 1;
+    $visitas = $_COOKIE['contador'] + 1;
     setcookie("contador", $visitas, time() + (3600 * 24 * 365));
     $mensaje = "Número de veces que se ha visitado dicha página: " . $visitas;
 }

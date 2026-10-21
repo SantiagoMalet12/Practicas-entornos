@@ -1,7 +1,7 @@
 <?php
 $usuario = "";
 
-if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST['usuario'])) {
+if (isset($_POST['usuario'])) {
     $usuario = trim($_POST['usuario']);
     setcookie("usuario", $usuario, time() + (86400 * 30));
 } elseif (isset($_COOKIE['usuario'])) {

@@ -1,13 +1,13 @@
 <?php
 session_start();
-require_once("conexion.php");
+include("conexion.php");
 mysqli_select_db($link, "base2");
 
 $mensaje = "";
 $alumnoEncontrado = false;
 
 if (isset($_POST['mail'])) {
-    $mail = trim($_POST['mail']);
+    $mail = $_POST['mail'];
     $mailEsc = mysqli_real_escape_string($link, $mail);
     $sql = "SELECT codigo, nombre, codigocurso, mail FROM alumnos WHERE mail = '$mailEsc'";
     $resultado = mysqli_query($link, $sql);

@@ -1,5 +1,5 @@
 <?php
-if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST['titular'])) {
+if (isset($_POST['titular'])) {
     $titular = $_POST['titular'];
     setcookie("titular", $titular, time() + (86400 * 30));
 } elseif (isset($_COOKIE['titular'])) {

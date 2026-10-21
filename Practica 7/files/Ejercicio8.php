@@ -1,12 +1,12 @@
 <?php
-require_once("conexion.php");
+include("conexion.php");
 mysqli_select_db($link, "prueba");
 
 $canciones = [];
 $buscar = "";
 
-if (isset($_REQUEST['buscar'])) {
-    $buscar = trim($_REQUEST['buscar']);
+if (isset($_GET['buscar'])) {
+    $buscar = trim($_GET['buscar']);
     $buscarEsc = mysqli_real_escape_string($link, $buscar);
     $sql = "SELECT canciones FROM buscador WHERE canciones LIKE '%$buscarEsc%'";
     $res = mysqli_query($link, $sql);
@@ -33,7 +33,7 @@ if (isset($_REQUEST['buscar'])) {
         <input type="submit" value="Buscar">
     </form>
 
-    <?php if (isset($_REQUEST['buscar'])): ?>
+    <?php if (isset($_GET['buscar'])): ?>
         <h3>Resultados:</h3>
         <?php if (count($canciones) > 0): ?>
             <table border="1" cellpadding="5" cellspacing="0">

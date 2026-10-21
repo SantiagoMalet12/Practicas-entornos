@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST['usuario']) && isset($_POST['clave'])) {
+if (isset($_POST['usuario']) && isset($_POST['clave'])) {
     $_SESSION['usuario'] = $_POST['usuario'];
     $_SESSION['clave'] = $_POST['clave'];
 }

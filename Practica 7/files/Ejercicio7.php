@@ -1,20 +1,16 @@
 <?php
 session_start();
-require_once("conexion.php");
+include("conexion.php");
 mysqli_select_db($link, "Compras");
-
-if (isset($_REQUEST)) {
-    extract($_REQUEST);
-}
 
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = [];
 }
 
-$accion = isset($accion) ? $accion : '';
+$accion = isset($_GET['accion']) ? $_GET['accion'] : '';
 
-if ($accion === 'agregar' && isset($id)) {
-    $idProd = (int)$id;
+if ($accion === 'agregar' && isset($_GET['id'])) {
+    $idProd = (int)$_GET['id'];
     $sql = "SELECT id, producto, precio FROM `catalogo` WHERE id = $idProd";
     $res = mysqli_query($link, $sql);
     if ($res && mysqli_num_rows($res) > 0) {
@@ -30,8 +26,8 @@ if ($accion === 'agregar' && isset($id)) {
             ];
         }
     }
-} elseif ($accion === 'quitar' && isset($id)) {
-    $idProd = (int)$id;
+} elseif ($accion === 'quitar' && isset($_GET['id'])) {
+    $idProd = (int)$_GET['id'];
     if (isset($_SESSION['carrito'][$idProd])) {
         if ($_SESSION['carrito'][$idProd]['cantidad'] > 1) {
             $_SESSION['carrito'][$idProd]['cantidad'] -= 1;
