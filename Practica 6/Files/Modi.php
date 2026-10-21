@@ -8,12 +8,12 @@
 <?php
 include ("conexion.inc");
 
-$vId = $_POST['Id'];
-$vCiudad = $_POST['Ciudad'];
-$vPais = $_POST['Pais'];
-$vHabitantes = $_POST['Habitantes'];
-$vSuperficie = $_POST['Superficie'];
-$vTieneMetro = isset($_POST['TieneMetro']) ? $_POST['TieneMetro'] : 0;
+$vId = $_POST['id'];
+$vCiudad = $_POST['ciudad'];
+$vPais = $_POST['pais'];
+$vHabitantes = $_POST['habitantes'];
+$vSuperficie = $_POST['superficie'];
+$vTieneMetro = isset($_POST['tieneMetro']) ? $_POST['tieneMetro'] : 0;
 
 $vSql = "UPDATE ciudades SET 
             ciudad='$vCiudad', 
@@ -26,10 +26,9 @@ $vSql = "UPDATE ciudades SET
 mysqli_query($link, $vSql) or die (mysqli_error($link));
 
 echo("La Ciudad fue Modificada correctamente.<br>");
-echo("<a href='Menu.html'>Volver al Menú del ABM</a>");
+echo("<a href='Menu.html'>Volver al men&uacute; del ABM</a>");
 
 mysqli_close($link);
 ?>
 </body>
 </html>
-

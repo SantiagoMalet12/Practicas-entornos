@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Listado Completo con PAGINACIÓN</title>
+<title>Listado Completo con Paginación</title>
 <meta charset="utf-8">
 </head>
 <body>
 <?php 
 include("conexion.inc");
 
-$Cant_por_Pag = 2; 
+$cant_por_pag = 2; 
 $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : null;
 
 if (!$pagina) {
@@ -16,19 +16,19 @@ if (!$pagina) {
     $pagina = 1;
 }
 else {
-    $inicio = ($pagina - 1) * $Cant_por_Pag;
+    $inicio = ($pagina - 1) * $cant_por_pag;
 }
 
 $vSql = "SELECT * FROM ciudades";
 $vResultado = mysqli_query($link, $vSql);
 $total_registros = mysqli_num_rows($vResultado);
-$total_paginas = ceil($total_registros / $Cant_por_Pag);
+$total_paginas = ceil($total_registros / $cant_por_pag);
 
 echo "Número de registros encontrados: " . $total_registros . "<br>";
-echo "Se muestran páginas de " . $Cant_por_Pag . " registros cada una<br>";
+echo "Se muestran páginas de " . $cant_por_pag . " registros cada una<br>";
 echo "Mostrando la página " . $pagina . " de " . $total_paginas . "<p>"; 
 
-$vSql = "SELECT * FROM ciudades LIMIT " . $inicio . "," . $Cant_por_Pag;
+$vSql = "SELECT * FROM ciudades LIMIT " . $inicio . "," . $cant_por_pag;
 $vResultado = mysqli_query($link, $vSql);
 ?>
 <table border="1" cellpadding="5" cellspacing="0">
@@ -75,4 +75,3 @@ if ($total_paginas > 1){
 <p align="left"><a href="Menu.html">Volver al men&uacute; del ABM</a></p>
 </body>
 </html>
-

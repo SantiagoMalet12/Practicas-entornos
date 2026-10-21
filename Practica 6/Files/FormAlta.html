@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Formulario Alta Ciudades</title>
- <meta charset="utf-8">
+  <title>Formulario Alta Ciudades</title>
+  <meta charset="utf-8">
 </head>
 <body>
-<FORM action="Alta.php" method="POST" name="FormAlta">
- <TABLE width="350">
- <TR> 
- <TD> Ciudad:</TD>
- <TD> <input type="TEXT" name="Ciudad" size="20" maxlength="50" required> </TD>
- </TR>
- <TR> 
- <TD> Pa&iacute;s:</TD>
- <TD> <input type="TEXT" name="Pais" size="20" maxlength="50" required> </TD>
- </TR>
- <TR> 
- <TD> Habitantes: </TD>
- <TD> <input type="TEXT" name="Habitantes" size="20" maxlength="20" required></TD>
- </TR>
- <TR> 
- <TD> Superficie: </TD>
- <TD> <INPUT TYPE="TEXT" name="Superficie" size="20" maxlength="20" required> </TD>
- </TR>
- <TR> 
- <TD> &iquest;Tiene Metro?: </TD>
- <TD> 
-    <input type="radio" name="TieneMetro" value="1"> S&iacute;
-    <input type="radio" name="TieneMetro" value="0" checked> No
- </TD>
- </TR>
- <TR> 
- <TD colspan="2" align="center"> <INPUT TYPE="SUBMIT" name="Submit" value="Agregar">
- <p><a href="Menu.html">Volver al men&uacute; del ABM</a></p> 
- </TD>
- </TR>
- </TABLE>
-</FORM>
+<form action="Alta.php" method="post" name="formAlta">
+  <table width="350">
+  <tr> 
+  <td> Ciudad:</td>
+  <td> <input type="text" name="ciudad" size="20" maxlength="50" required> </td>
+  </tr>
+  <tr> 
+  <td> Pa&iacute;s:</td>
+  <td> <input type="text" name="pais" size="20" maxlength="50" required> </td>
+  </tr>
+  <tr> 
+  <td> Habitantes: </td>
+  <td> <input type="text" name="habitantes" size="20" maxlength="20" required></td>
+  </tr>
+  <tr> 
+  <td> Superficie: </td>
+  <td> <input type="text" name="superficie" size="20" maxlength="20" required> </td>
+  </tr>
+  <tr> 
+  <td> &iquest;Tiene Metro?: </td>
+  <td> 
+     <input type="radio" name="tieneMetro" value="1"> S&iacute;
+     <input type="radio" name="tieneMetro" value="0" checked> No
+  </td>
+  </tr>
+  <tr> 
+  <td colspan="2" align="center"> <input type="submit" name="submit" value="Agregar">
+  <p><a href="Menu.html">Volver al men&uacute; del ABM</a></p> 
+  </td>
+  </tr>
+  </table>
+</form>
 </body>
 </html>
-
